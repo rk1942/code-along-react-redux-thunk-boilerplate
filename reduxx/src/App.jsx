@@ -1,19 +1,16 @@
-import { useState } from 'react'
-
-import './App.css'
-
+import './App.css';
+import React from 'react';
+import Counter from './Counter';
+import { Provider } from 'react-redux'; 
+import store from './store';
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <Provider store={store}> 
+      <div className="App">
+        <Counter />
       </div>
-    </>
-  )
+    </Provider>
+  );
 }
 
-export default App
+export default App;
